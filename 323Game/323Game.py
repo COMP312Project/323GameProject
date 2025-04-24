@@ -3,7 +3,6 @@ import random
 import pygame
 import os
 import pytmx
-import pytmx
 
 # Initialize pygame
 pygame.init()
@@ -616,7 +615,7 @@ def main():
         return
     
     # Load the tmx map
-    tmx_data = pytmx.util_pygame.load_pygame(os.path.join("Maps", "LSBNR_MainMap.tmx"))
+    tmx_data = pytmx.util_pygame.load_pygame(os.path.join("323Game", "Maps", "TLSBNR_MainMap.tmx"))
     
     wheel_cipher = WheelCipher()
     suspicion_system = SuspicionSystem()
@@ -720,6 +719,7 @@ def main():
                 playing = False
             
             screen.fill(BLACK)
+            draw_map(screen, tmx_data)
             all_sprites.draw(screen)
             
             if player.can_interact:
